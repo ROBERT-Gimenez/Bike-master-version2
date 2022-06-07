@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/head') %> 
+    
+</head>
+<body>
+
+    <%- include('../partials/header') %> 
+    
+    <main>
+        <div class="register">
+        <div id="head-logo">
+            <h2>Edicion de perfil: <%= session.user.name %> </h2>
+        </div>
+        <form class="form-register" action="/usuario/perfil/<%= user.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+            <div class="register-input">
+                <label for="name">Nombre y apellido</label>
+                <input type="text" name="name" id="name" class="input-style" placeholder="Ingrese su nombre" value="<%= user.name %>">
+            </div>
+            <div class="register-input">
+                <label for="altura">Altura</label>
+                <input type="text" name="altura" id="altura" class="input-style" placeholder="Ingrese un nombre de usuario" value="<%= (locals.user && user.nickname)? user.nickname : ""%>">
+            </div>
+            <div class="register-input">
+                <label for="telefono">Número de celular</label>
+                <input type="number" name="telefono" id="telefono" class="input-style" placeholder="Ingrese su número" value="<%= user.telefono %>">
+            </div>
+            <div class="register-input">
+                <label for="provincia">Provincia</label>
+                <input type="text" name="provincia" id="provincia" class="input-style" placeholder="Ingrese su provincia" value="<%= (locals.user && user.direction)? user.province : "" %>">
+            </div>
+            <div class="register-input">
+                <label for="localidad">Localidad</label>
+                <input type="text" name="localidad" id="localidad" class="input-style" placeholder="Ingrese su localidad" value="<%= (locals.user && user.localidad)? user.localidad : "" %>">
+            </div>
+            <div class="register-input">
+                <label for="pais">Pais</label>
+                <input type="text" name="Pais" id="Pais" class="input-style" placeholder="Ingrese su ciudad" value="<%= (locals.user && user.city)? user.city : "" %>">
+            </div>
+            <div class="register-input">
+                <label for="direccion">Ingrese su direccion</label>
+                <input type="text" name="direccion" id="direccion" class="input-style" placeholder="Ingrese una dirección" value="<%= (locals.user && user.direction)? user.direction : "" %>">
+            </div>
+            <div class="register-input">
+                <label for="codigo_postal">Código postal</label>
+                <input type="number" name="codigo_postal" id="codigo_postal" class="input-style" placeholder="Código postal" value="<%= (locals.user && user.postal)? user.postal : "" %>">
+            </div>
+            <div class="register-input">
+                <label for="avatar">Seleccione imagen de perfil</label>
+                <input type="file" name="avatar" id="avatar" value="">
+            </div>
+            <div class="btn_register">
+                <button class="btn-submit_register" type="submit">Guardar cambios</button>
+            </div>
+        </form>
+        </div>
+    </main> 
+
+    <%- include('../partials/footer') %> 
+</body>
+</html>

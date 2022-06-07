@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('/images/fondo-formularios.png');
+    font-family: 'Nunito Sans', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+a#link {
+    text-transform: none;
+    color: wheat;
+}
+
+.register {
+    margin: 1rem auto 2rem auto;
+    border-radius: 20px;
+}
+
+.register #head-logo {
+    text-align: center;
+    color: whitesmoke;
+}
+
+.register #head-logo h2 {
+    padding: 10px;
+}
+
+.register .form-register {
+    padding: 20px;
+    background-color: rgb(251 251 251 / 10%);
+    margin: 1rem;
+}
+
+.register .form-register .register-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.register .form-register .register-input label {
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.register .form-register .register-input input {
+    height: 2.5rem;
+    border: none;
+    box-shadow: 0px 0px 2px 1px rgb(255, 196, 0);
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-bottom: 1rem;
+}
+
+.register .form-register .register-input input:focus {
+    outline: none;
+}
+
+.register .form-register .register-input input::placeholder {
+    opacity: 0.5;
+}
+
+.btn_register {
+    display: flex;
+    flex-direction: column;
+}
+
+span.terminos {
+    text-align: center;
+}
+
+.btn_register .btn-submit_register {
+    background-color: var(--naranja);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    width: 50%;
+    margin: 1rem auto;
+    cursor: pointer;
+}
+
+small.text-danger {
+    color: #fa0909;
+    margin: 0.5rem 0 1rem;
+    height: 20px;
+}
+
+small#terms {
+    text-align: center;
+}
+
+span.login {
+    margin: 0.5rem auto;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet */
+
+@media (min-width: 768px) {
+    .register #head-logo {
+        margin: 30px auto;
+        width: 75%;
+        border-bottom: thin solid whitesmoke;
+    }
+    
+    .register {
+        width: 60%;
+        margin: 3rem auto 2rem auto;
+    }
+
+    .register .form-register{
+        width: 75%;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+    .register .form-register .register-input {
+        font-size: 1.2rem;
+    }
+
+    .register .form-register .register-input input {
+        font-size: 1rem;
+    }
+
+    .register .btn_register .btn-submit_register {
+        width: 60%;
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Fin Tablet */
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .register .form-register {
+        flex-wrap: wrap;
+        width: 80%;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        padding: 30px;
+    }
+    form.form-register div.btn_register{
+        min-width: 5rem;
+    }
+    
+    .register .form-register .register-input input {
+        font-size: 100%;
+    }
+
+    .register .form-register .register-input {
+        width: 45%;
+    }
+    span.admin{
+        width: 100%;
+    }
+    .register .btn_register .btn-submit_register:hover {
+        box-shadow: 0px 0px 2px 2px rgba(162, 160, 158, 0.621);
+        transition: all 0.5s ease-out;
+    }
+    
+}
+
+/* Fin desktop *

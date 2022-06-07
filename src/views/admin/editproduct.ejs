@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/admin/headAdmin') %> 
+
+<body>
+    
+    <%- include('../partials/admin/headerAdmin')  %> 
+
+    <main>
+        <h2 class="titulo">Editar: <%= product.name %> </h2>            
+        <div class="register">
+            <form action="/admin/producto/editar/<%= product.id %>?_method=PUT" method="POST" class="form-register">
+                    <div class="register-input">
+                        <label for="name">Nombre de producto</label>
+                        <input type="text" name="name" class="input-style"placeholder="Ingrese nombre de producto" value="<%= product.name %>">
+                    </div>
+                    <div class="register-input">
+                        <label for="marca">Marca</label>
+                        <input type="text" name="marca" id="marca" class="input-style"placeholder="Ingrese marca" value="<%= product.marca %>">
+                    </div>
+                    <div class="register-input">
+                        <label for="price">Precio</label>
+                        <input type="number" name="price" id="price" class="input-style" placeholder="Ingrese precio" value="<%= product.price %>">
+                    </div>
+                    <div class="register-input">
+                        <label for="stock">Stock</label>
+                        <input type="text" name="stock" id="stock" class="input-style" placeholder="cantidad de stock" value="<%= product.stock %>">
+                    </div>
+                    <div class="register-input">
+                        <label for="discount">Descuento</label>
+                        <input type="number" name="discount" id="discount" class="input-style" value="<%= product.discount %>">
+                    </div>
+                    <div class="register-input">
+                        <label for="categoryId">Categoria</label>
+                        <select name="categoryId" id="select" class="input-style">
+                            <option value="selected" selected hidden>Elija una categoría</option>
+                            <% categories.forEach(category => { %>
+                                <option value="<%= category.id %>"><%= category.name %></option>
+                            <% }) %> 
+                        </select>
+                    </div>
+                    <div class="register-input">
+                        <label for="image">Subir imagen</label>
+                        <input type="file" name="image" value="<%= product.image %>">
+                    </div>
+                    <div class="register-input">
+                        <label for="condition">Condicion de producto</label>
+                        <select name="condition" id="select" class="input-style">
+                            <option value="" selected hidden>Elija una categoría</option>
+                            <option value="in-sale">Oferta</option>
+                            <option value="featured">Destacado</option>
+                        </select>
+                    </div>
+                    <div class="register-input">
+                        <label for="description">Detalles</label>
+                        <textarea type="description" name="description" id="description" cols="30" rows="3"><%= product.description %></textarea>
+                    </div> 
+            <div class="btn_register">
+                 <button type="submit" class="btn-submit_register">Guardar Cambios</button>
+                 <span class="admin"><a class="admin" href="/admin">Volver</a></span>
+            </div>
+             </form>
+        </div>
+    </main>
+    <footer> 
+
+        <ul class="social_icon">
+            <li><a href="https://www.facebook.com/">
+                    <ion-icon name="logo-facebook">
+                        </ion-icon.com>
+                </a></li>
+            <li><a href="https://twitter.com/?lang=es">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </a></li>
+            <li><a href="https://www.instagram.com/?hl=es-la">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+            <li><a href="https://www.youtube.com/">
+                    <ion-icon name="logo-youtube"></ion-icon>
+                </a></li>
+    
+        </ul>
+        <ul class="menu">
+            <li><a href="https://www.mercadopago.com.ar/">MercadoPago</a></li>
+            <li><a href="https://www.masterconsultas.com.ar/"> Master Card</a></li>
+            <li><a href="https://www.visa.com.ar/">Visa</a></li>
+            <li><a href="https://www.e-pagofacil.com/">PagoFacil</a></li>
+        </ul>
+        <p>Comision 13 - Grupo 11 - &#169; Derechos Reservados.</p>
+    </footer>
+</body>
+</html>
